@@ -1,46 +1,34 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
-import { v4 as uuidv4  } from 'uuid';
+import { Injectable, Logger, NotFoundException, OnModuleInit } from '@nestjs/common';
 import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
-import { Product } from './entities/product.entity';
+import { PrismaClient } from '@prisma/client';
 
 @Injectable()
-export class ProductsService {
+export class ProductsService extends PrismaClient implements OnModuleInit {
+  
+  private readonly logger = new Logger("ProductsService");
 
-  private products: Product[] = [];
+  onModuleInit() {
+    this.$connect();
+    this.logger.log("Database connection started");
+  }
 
   create(createProductDto: CreateProductDto) {
-    const { name, description, price } = createProductDto;
-    const newProduct = new Product(
-      uuidv4(),
-      name, 
-      description, 
-      price,
-    );
-    this.products.push(newProduct);
-    return newProduct;
+    return createProductDto;
   }
 
   findAll() {
-    return this.products;
   }
 
-  findOne(id: string): Product {
-    const product = this.products.find( product => product.id === id );
-    if ( !product ) throw new NotFoundException(`Product with id ${ id } not found`);
-    return product;    
+  findOne(id: string) {
+;    
   }
 
   update(id: string, updateProductDto: UpdateProductDto) {    
-    const { id:_, name, description, price } = updateProductDto;
-    const product = this.findOne( id );
-    product.updateNewValues({ name, description, price });
-    return product;
+
   }
 
-  remove(id: string): Product {
-    const product = this.findOne(id);
-    this.products = this.products.filter( product => product.id !== id );
-    return product;
+  remove(id: string) {
+
   }
 }
