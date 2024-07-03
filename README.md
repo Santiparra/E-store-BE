@@ -10,12 +10,17 @@
 
 2. Create an `.env` file at the root directory of the project (use the provided `.env.template` as a guide for the bare minimum required env variables needed since they are type safe checked using dotenv and joi).
 
-3. Build your own Docker images for all the required microservices. To do this execute the following command: 
+3. Clone all required sub-modules needed to build our images. To do this, simply execute the following command: 
+```bash
+git submodule update --init --recursive
+```
+
+4. Build your own Docker images for all the required microservices. To do this execute the following command: 
 ```bash
 docker compose -f docker-compose.prod.yml build
 ```
 
-4. To start the new generated images into a new container execute the following command: 
+5. To start the new generated images into a new container execute the following command: 
 ```bash
 docker compose -f docker-compose.prod.yml up
 ```
