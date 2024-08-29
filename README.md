@@ -1,4 +1,21 @@
-## CURRENTLY UNDER REWORK (07/24)
+## UPDATED (08/24)
+
+This is the latest version of the project, it has been updated and could be considered as finished, i will periodically update this repo with new features, fixes or to try out new things. If for some reason i come back to do a full rework or change some core functionality it will be indicated on the label above as such.
+
+This is a project built for educational purposes, while its fully functional it should be considered as a demo. Im aware that some parts of the code included here should not be deployed in a production environment(i.e: k8s), but it is intended to be a sample of how to build a microservices architecture using NestJS and NATS. Im also aware that some of the technologies used here wouldn't be optimal for a production environment (i.e: Sqlite database), but again, this is just a sample and should be used as a guide for building a microservices architecture.
+
+About this repository in particular its meant to be a hub for all the microservices used in this project, they are all independent and each has its own repo with its corresponding sub-module referred here.
+
+## TECH STACK:
+
+- NestJS
+- NATS
+- Docker
+- Kubernetes
+- MongoDB
+- PostgreSQL
+- Stripe
+- Sqlite
 
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
