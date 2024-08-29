@@ -11,6 +11,7 @@ About this repository in particular its meant to be a hub for all the microservi
 - NestJS
 - NATS
 - Docker
+- GCloud CI/CD
 - Kubernetes
 - MongoDB
 - PostgreSQL
