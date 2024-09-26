@@ -64,3 +64,7 @@ docker compose up --build
 1. Please note that in development we don`t use our production database in our orders microservice, this is intentional and we should use different databases for every microservice when working on a development environment, i have not done so since this repo is for demo purposes but you are free to create your own database duplicates for development and change the environment variables accordingly.
 
 2. Alternatively (not recommended) you could also skip this Repo entirely and build each module independently but you will also need to build and/or run NATS and each Database individually as well. To do this simply use this repo to navigate to each sub-module, clone each one and follow all the instructions provided on each individual module readme file.
+
+## 🤝 Contributing
+
+If you'd like to contribute, please fork the repository and open a pull request to the `main` branch.
